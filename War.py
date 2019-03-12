@@ -19,9 +19,12 @@ class Game:
                 self.deck2.give_card(card1)
                 self.deck2.give_card(card2)
             else:
-                self.war([card1], [card2])
+                if self.deck1.size() >= 2 and self.deck2.size() >= 2:
+                    self.war([card1], [card2])
+                else:
+                    break
 
-        if self.deck1.size() == 0:
+        if self.deck1.size() < 2:
             print('Player 1 loses')
         elif self.deck2.size() < 2:
             print('Player 2 loses')
@@ -30,12 +33,6 @@ class Game:
 
     
     def war(self, cards1, cards2):
-        if self.deck1.size() < 2:
-            print('Player 1 loses')
-            return
-        elif self.deck2.size() < 2:
-            print('Player 2 loses')
-            return
         face_down_card1 = self.deck1.get_next()
         face_down_card2 = self.deck2.get_next()
         next_card1 = self.deck1.get_next()
@@ -204,3 +201,4 @@ class Card:
 
 game = Game()
 game.play_game()
+print('a')

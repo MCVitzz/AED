@@ -2,7 +2,7 @@ import math
 
 class Fraction:
     def __init__(self, num, den):
-        if type(num) is int and type(den) is int:
+        if not (type(num) is int and type(den) is int):
             raise ValueError()
         gcd =  math.gcd(num, den)
         self.den = int(den // gcd)
@@ -70,4 +70,6 @@ class Fraction:
     def __repr__(self):
         return 'Numerator: ' + str(self.num) + '\nDenominator: ' + str(self.den)
 
-        
+a = Fraction(1, 2) + 3
+
+print(a)

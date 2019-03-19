@@ -199,6 +199,6 @@ class Card:
     def __eq__(self, other):
         return self.num == other.num
 
-game = Game()
-game.play_game()
-print('a')
+#game = Game()
+#game.play_game()
+#print('a')

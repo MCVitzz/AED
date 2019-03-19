@@ -9,6 +9,8 @@ class Stack:
         self.items.insert(0, item)
 
     def pop(self):
+        if self.is_empty():
+            raise IndexError('Stack is empty')
         item = self.items[0]
         self.items.remove(item)
         return item

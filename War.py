@@ -1,12 +1,12 @@
-import FIFOStack
+from Queue import Queue
 import random
 
 class Game:
     def __init__(self):
         deck = self.shuffle_cards()
         deck1, deck2 = self.split_deck(deck)
-        self.deck1 = Deck(FIFOStack.Stack.to_stack(deck1))
-        self.deck2 = Deck(FIFOStack.Stack.to_stack(deck2))
+        self.deck1 = Deck(Queue.to_queue(deck1))
+        self.deck2 = Deck(Queue.to_queue(deck2))
 
     def play_game(self):
         while not (self.deck1.size() == 0 or self.deck2.size() == 0):

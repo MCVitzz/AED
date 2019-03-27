@@ -21,7 +21,6 @@ def do_math(num1, num2, operator):
     return res
 
 def postfix_eval(postfix):
-
     try:
         if(postfix.startswith('Bad Expression') or postfix.startswith('Invalid Operator')):
             return postfix

@@ -73,12 +73,18 @@ class LinkedList:
         self.nodes += 1
 
     def remove(self, item):
-        i = 0
+        if self.head == None:
+            return
+        if self.head.data is item:
+            self.head = self.head.next
+            return
+        
         n = self.head
-        while n != None:
-            if n.data == item:
-                self.pop(i)
-        i += 1
+        while n.next is not None:
+            if n.next.data is item:
+                n.next = n.next.next
+
+            n = n.next
 
     def pop(self, pos = None):
         if pos is None:
